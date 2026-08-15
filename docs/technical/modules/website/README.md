@@ -1,13 +1,14 @@
 # Website 官网模块
 
 > 模块：`website`
-> 最后核对：2026-08-15
+> 最后核对：2026-08-16
 > 详细历史：[MAINTENANCE_LOG.md](./MAINTENANCE_LOG.md)
 
 ## Interface
 
 - 输入：经公司确认的四种语言公司资料、服务介绍、联系方式、隐私政策、品牌素材和 Meta 验证配置。
 - 输出：可通过 HTTPS 访问的响应式静态公开页面；同一文档提供四种语言的原地切换、公司信息、服务说明、联系方式和隐私政策。GitHub Pages 发布时只打包 `index.html`、`assets/` 与 `robots.txt`。
+- 当前托管：公开仓库 `Lanzxr/qiyunzhisuan-website` 的 `master` 分支通过 GitHub Actions 发布到 `https://lanzxr.github.io/qiyunzhisuan-website/`，Pages 强制使用 HTTPS。
 - 副作用：发布后内容可被搜索引擎和 Meta/Facebook 爬虫读取；首版不写入用户数据。
 - 失败边界：缺少域名/HTTPS、验证配置或已确认的公司资料时，不得宣称网站验证或公司真实性验收完成。
 

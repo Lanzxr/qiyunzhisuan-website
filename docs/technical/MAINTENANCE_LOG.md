@@ -4,6 +4,7 @@
 
 | 日期 | 模块 | 摘要 | 详细记录 |
 | ---- | ---- | ---- | -------- |
+| 2026-08-16 | `website` | 创建公开 GitHub 仓库并完成 Pages HTTPS 部署与公网资源验收 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-16 | `website` | 使用透明 PNG 保留电脑边框、键盘和桌面光影并移除黑色环境底 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-16 | `website` | 压低 about 图片近黑底色阶，消除 screen 混合后的轻微亮框 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-16 | `website` | 将 about 图片混合模式提升到媒体父层，避免透明容器内先合成 | [details](./modules/website/MAINTENANCE_LOG.md) |

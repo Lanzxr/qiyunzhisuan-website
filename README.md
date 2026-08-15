@@ -2,6 +2,9 @@
 
 中山市启云智算信息技术有限责任公司的静态官网，适合部署至 GitHub Pages。
 
+- 线上网站：https://lanzxr.github.io/qiyunzhisuan-website/
+- GitHub 仓库：https://github.com/Lanzxr/qiyunzhisuan-website
+
 ## 页面与语言
 
 网站只有一个入口：`index.html`。
@@ -11,6 +14,10 @@
 网站使用静态 HTML、CSS 和 JavaScript，不依赖后端、数据库或构建工具。
 
 ## GitHub Pages 发布
+
+当前仓库已通过 GitHub Actions 发布至上述线上地址。后续推送到 `master` 分支会自动重新部署。
+
+首次部署或迁移到其他仓库时：
 
 1. 将本目录推送至 GitHub 仓库。
 2. 打开仓库的 `Settings`，进入 `Pages`。

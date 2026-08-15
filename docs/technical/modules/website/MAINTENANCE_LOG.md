@@ -2,6 +2,29 @@
 
 > 新条目放在最前；只新增，不改写历史结论。
 
+## 2026-08-16 - 发布到 GitHub Pages
+
+### 目标
+
+- 将当前静态官网提交到公开 GitHub 仓库并完成可公网访问的 Pages 部署。
+
+### 已验证
+
+- 创建公开仓库 `https://github.com/Lanzxr/qiyunzhisuan-website`，本地 `master` 分支已跟踪 `origin/master`。
+- GitHub Pages 已启用 `workflow` 构建方式，HTTPS 强制开启；Actions 运行 `31897718791` 的构建和部署作业成功。
+- 公网首页 `https://lanzxr.github.io/qiyunzhisuan-website/`、CSS、JavaScript、透明 PNG 资源和 `?lang=zh-HK` 入口均返回 HTTP 200。
+- 发布制品仍由 `.github/workflows/deploy-pages.yml` 白名单限制为 `index.html`、`assets/` 与 `robots.txt`。
+
+### 未验证边界
+
+- `REPLACE_WITH_META_TOKEN` 仍是占位值，Meta/Facebook 域名验证尚未执行。
+- 尚未注册或绑定自定义域名，`CNAME`、canonical、`og:url` 与绝对 `og:image` 未配置。
+- 当前任务未提供可调用的浏览器控制接口，因此公网验收为 HTTP 与资源层检查，未新增线上视觉截图。
+
+### 运行变化
+
+- 官网已从本地静态页面变为可通过 GitHub Pages HTTPS 公网访问；页面功能和公开文案未改变。
+
 ## 2026-08-16 - 使用透明 PNG 保留电脑边框和桌面光影
 
 ### 目标
