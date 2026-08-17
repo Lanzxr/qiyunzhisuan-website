@@ -4,6 +4,14 @@
 
 | 日期 | 模块 | 摘要 | 详细记录 |
 | ---- | ---- | ---- | -------- |
+| 2026-08-17 | `website` | 将语言入口改为明确标注语言与地区的自定义列表框（保留原生后备），并同步四语言文案与移动菜单行为 | [details](./modules/website/MAINTENANCE_LOG.md) |
+| 2026-08-17 | `website` | 移除首屏代码背景的装饰矩形内框，保留无框渐隐与网格 | [details](./modules/website/MAINTENANCE_LOG.md) |
+| 2026-08-17 | `website` | 参考 Vercel 视觉语言重设计官网，统一网格、CTA、服务/隐私分隔线布局，补齐关于区四语言标签并接入概念 Logo | [details](./modules/website/MAINTENANCE_LOG.md) |
+| 2026-08-17 | `website` | 优化联系信息卡片配色、层级与文字对比度 | [details](./modules/website/MAINTENANCE_LOG.md) |
+| 2026-08-17 | `website` | 分离联系区 CTA 与紫色渐变背景，改用独立白底高对比按钮 | [details](./modules/website/MAINTENANCE_LOG.md) |
+| 2026-08-17 | `website` | 优化联系区发送企业邮件 CTA 的对齐、对比度、焦点反馈与移动端宽度 | [details](./modules/website/MAINTENANCE_LOG.md) |
+| 2026-08-17 | `website` | 优化关于区域笔记本图片的主体比例、边缘渐隐与透明代码雨呈现 | [details](./modules/website/MAINTENANCE_LOG.md) |
+| 2026-08-17 | `website` | 优化主导航层级、锚点当前状态、分段语言选择器与移动菜单完整交互 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-16 | `website` | 创建公开 GitHub 仓库并完成 Pages HTTPS 部署与公网资源验收 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-16 | `website` | 使用透明 PNG 保留电脑边框、键盘和桌面光影并移除黑色环境底 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-16 | `website` | 压低 about 图片近黑底色阶，消除 screen 混合后的轻微亮框 | [details](./modules/website/MAINTENANCE_LOG.md) |
