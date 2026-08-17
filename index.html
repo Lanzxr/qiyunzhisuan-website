@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="中山市启云智算信息技术有限责任公司，提供软件开发、人工智能应用、WhatsApp AI 客服、境外电商平台运营自动化与企业信息化解决方案。">
-    <meta name="theme-color" content="#147d68">
+    <meta name="theme-color" content="#fafafa">
     <!-- Replace the placeholder with the token from Meta Business Manager before verification. -->
     <meta name="facebook-domain-verification" content="REPLACE_WITH_META_TOKEN">
     <meta property="og:title" content="中山市启云智算信息技术有限责任公司">
@@ -13,25 +13,46 @@
     <meta property="og:image" content="assets/images/hero-technology-background.jpg">
     <title>中山市启云智算信息技术有限责任公司</title>
     <link rel="stylesheet" href="assets/site.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skip">跳到主要内容</a>
     <header class="site-header">
       <nav class="nav-shell" aria-label="主导航" data-i18n-aria="navigationLabel">
         <a class="brand" href="#top" aria-label="启云智算首页" data-i18n-aria="brandHome">
+          <img class="brand-mark" src="assets/images/qiyun-logo-concept-a.png" width="52" height="52" alt="" aria-hidden="true" decoding="async">
           <span class="brand-text"><strong data-i18n="brand.shortName">启云智算</strong><small data-i18n="brand.descriptor">Qiyun Zhisuang</small></span>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-i18n="menu">菜单</button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="菜单" data-i18n-aria="menu">
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="sr-only" data-i18n="menu">菜单</span>
+        </button>
         <div class="nav-links" id="primary-navigation">
           <a href="#about" data-i18n="nav.about">关于我们</a>
           <a href="#services" data-i18n="nav.services">服务</a>
           <a href="#contact" data-i18n="nav.contact">联系我们</a>
           <a href="#privacy" data-i18n="nav.privacy">隐私政策</a>
-          <div class="language-switcher" role="group" aria-label="选择语言" data-i18n-aria="languageLabel">
-            <button class="language-button" type="button" data-locale="zh-CN" aria-pressed="true" aria-label="简体中文" data-i18n-aria="language.simplifiedChinese"><span class="language-main" data-i18n="language.simplifiedChinese">简体中文</span></button>
-            <button class="language-button" type="button" data-locale="zh-TW" aria-pressed="false" aria-label="繁体中文，台湾地区" data-i18n-aria="language.traditionalTaiwanAria"><span class="language-main" data-i18n="language.traditionalChinese">繁体中文</span><span class="language-region" data-i18n="language.taiwanRegion">台湾地区</span></button>
-            <button class="language-button" type="button" data-locale="zh-HK" aria-pressed="false" aria-label="繁体中文，中国香港" data-i18n-aria="language.traditionalHongKongAria"><span class="language-main" data-i18n="language.traditionalChinese">繁体中文</span><span class="language-region" data-i18n="language.hongKongRegion">中国香港</span></button>
-            <button class="language-button" type="button" data-locale="en" aria-pressed="false" aria-label="English" data-i18n-aria="language.english"><span class="language-main" data-i18n="language.english">English</span></button>
+          <div class="language-switcher">
+            <label class="language-label" for="language-select" data-i18n="language.selectLabel">语言与地区</label>
+            <div class="language-control">
+              <button class="language-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="language-options" aria-label="选择语言与地区" data-i18n-aria="languageLabel">
+                <span class="language-current">简体中文</span>
+                <span class="language-chevron" aria-hidden="true"></span>
+              </button>
+              <div class="language-menu" id="language-options" role="listbox" tabindex="-1" hidden>
+                <button class="language-option" type="button" role="option" tabindex="-1" data-locale="zh-CN" data-i18n="language.simplifiedChinese">简体中文</button>
+                <button class="language-option" type="button" role="option" tabindex="-1" data-locale="zh-TW" data-i18n="language.traditionalTaiwanOption">繁体中文（中国台湾）</button>
+                <button class="language-option" type="button" role="option" tabindex="-1" data-locale="zh-HK" data-i18n="language.traditionalHongKongOption">繁体中文（中国香港）</button>
+                <button class="language-option" type="button" role="option" tabindex="-1" data-locale="en" data-i18n="language.english">English</button>
+              </div>
+              <select class="language-select" id="language-select" aria-label="选择语言与地区" data-i18n-aria="languageLabel">
+                <option value="zh-CN" data-i18n="language.simplifiedChinese">简体中文</option>
+                <option value="zh-TW" data-i18n="language.traditionalTaiwanOption">繁体中文（中国台湾）</option>
+                <option value="zh-HK" data-i18n="language.traditionalHongKongOption">繁体中文（中国香港）</option>
+                <option value="en" data-i18n="language.english">English</option>
+              </select>
+            </div>
           </div>
         </div>
       </nav>
@@ -39,14 +60,17 @@
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-background" aria-hidden="true">
+          <div class="grid-overlay"></div>
+        </div>
         <div class="hero-grid">
           <div class="hero-copy reveal">
             <p class="kicker" data-i18n="hero.kicker">人工智能与信息技术服务</p>
-            <h1 id="hero-title" data-i18n="hero.title">让技术真正服务于业务</h1>
-            <p data-i18n="hero.description">启云智算以可落地的软件与人工智能方案，帮助企业提升效率、优化流程。</p>
+            <h1 id="hero-title" class="hero-title-animated" data-i18n="hero.title">让技术真正服务于业务</h1>
+            <p class="hero-description" data-i18n="hero.description">启云智算以可落地的软件与人工智能方案，帮助企业提升效率、优化流程。</p>
             <div class="button-row">
-              <a class="button" href="#services" data-i18n="hero.primaryAction">了解我们的服务</a>
-              <a class="button secondary" href="#contact" data-i18n="hero.secondaryAction">联系我们</a>
+              <a class="button primary-action" href="#services" data-i18n="hero.primaryAction">了解我们的服务</a>
+              <a class="button secondary-action" href="#contact" data-i18n="hero.secondaryAction">联系我们</a>
             </div>
           </div>
         </div>
@@ -55,11 +79,11 @@
       <section class="identity-section" aria-labelledby="identity-title">
         <div class="identity-inner reveal">
           <div class="identity-intro"><p class="section-label" data-i18n="identity.label">企业主体信息</p><h2 id="identity-title" data-i18n="identity.title">公开信息集中核验</h2></div>
-          <dl class="identity-grid">
-            <div><dt data-i18n="identity.legalNameLabel">公司名称</dt><dd data-i18n="identity.legalName">中山市启云智算信息技术有限责任公司</dd></div>
-            <div><dt data-i18n="identity.establishedLabel">成立时间</dt><dd data-i18n="identity.established">2026 年 7 月 9 日</dd></div>
-            <div><dt data-i18n="identity.creditCodeLabel">统一社会信用代码</dt><dd data-i18n="identity.creditCode">91442000MAKJ8RC710</dd></div>
-            <div><dt data-i18n="identity.addressLabel">注册地址</dt><dd data-i18n="identity.address">中山市阜沙镇长安街 54 号 2 楼</dd></div>
+          <dl class="identity-grid glass-card">
+            <div class="identity-item"><dt data-i18n="identity.legalNameLabel">公司名称</dt><dd data-i18n="identity.legalName">中山市启云智算信息技术有限责任公司</dd></div>
+            <div class="identity-item"><dt data-i18n="identity.establishedLabel">成立时间</dt><dd data-i18n="identity.established">2026 年 7 月 9 日</dd></div>
+            <div class="identity-item"><dt data-i18n="identity.creditCodeLabel">统一社会信用代码</dt><dd data-i18n="identity.creditCode">91442000MAKJ8RC710</dd></div>
+            <div class="identity-item"><dt data-i18n="identity.addressLabel">注册地址</dt><dd data-i18n="identity.address">中山市阜沙镇长安街 54 号 2 楼</dd></div>
           </dl>
         </div>
       </section>
@@ -67,7 +91,7 @@
       <section class="section services-section" id="services" aria-labelledby="services-title">
         <div class="section-heading reveal"><h2 id="services-title" data-i18n="services.title">围绕业务场景组织技术能力</h2><p data-i18n="services.description">从通用软件与企业信息化基础，到跨境客户沟通和商品运营自动化，方案以清晰边界、实际使用和后续维护为基础。</p></div>
         <div class="service-groups">
-          <article class="service-group service-group-primary reveal"><h3 data-i18n="services.application.title">应用建设</h3><p data-i18n="services.application.description">面向具体业务流程、客户服务和内部管理，构建可投入使用的软件与智能应用。</p><ul data-i18n-list="services.application.items"><li>软件开发</li><li>人工智能应用开发</li><li>数据处理</li></ul></article>
+          <article class="service-group reveal"><h3 data-i18n="services.application.title">应用建设</h3><p data-i18n="services.application.description">面向具体业务流程、客户服务和内部管理，构建可投入使用的软件与智能应用。</p><ul data-i18n-list="services.application.items"><li>软件开发</li><li>人工智能应用开发</li><li>数据处理</li></ul></article>
           <article class="service-group reveal"><h3 data-i18n="services.enterprises.title">企业信息化</h3><p data-i18n="services.enterprises.description">连接已有系统、数据与人员协作，为企业建立能够逐步发展的信息化基础。</p><ul data-i18n-list="services.enterprises.items"><li>系统集成</li><li>企业信息化解决方案</li><li>技术咨询服务</li></ul></article>
           <article class="service-group service-group-automation reveal"><div><h3 data-i18n="services.automation.title">跨境业务自动化</h3><p data-i18n="services.automation.description">把人工智能与平台接口接入日常运营，支持客户咨询响应与商品状态维护，减少重复人工操作。</p></div><ul data-i18n-list="services.automation.items"><li>WhatsApp AI 客服：面向咨询接待、常见问题回复与人工转接</li><li>境外电商平台商品自动上下架：按业务规则维护商品发布状态</li></ul></article>
         </div>
@@ -76,18 +100,22 @@
       <section class="about" id="about" aria-labelledby="about-title">
         <div class="about-inner"><div class="about-grid">
           <div class="about-copy reveal">
+            <p class="section-label" data-i18n="about.label">关于我们</p>
             <h2 id="about-title" data-i18n="about.title">面向真实业务，交付可用系统</h2>
             <p data-i18n="about.paragraphOne">中山市启云智算信息技术有限责任公司是一家专注于人工智能应用与信息技术服务的科技企业，围绕企业数字化和智能化需求提供相关技术服务。</p>
             <p data-i18n="about.paragraphTwo">公司注重技术落地与实际业务场景结合，致力于通过稳定、高效、易用的技术方案，帮助企业提升运营效率、优化客户服务与业务流程。</p>
             <p data-i18n="about.paragraphThree">启云智算坚持合规、可靠和持续创新，以务实的技术能力为客户提供可落地、可持续的信息化与人工智能解决方案。</p>
             <div class="principles" data-i18n-pairs="about.principles"><div class="principle"><strong>从需求出发</strong><span>先理解业务流程，再确定技术方案与交付边界。</span></div><div class="principle"><strong>把方案做实</strong><span>重视可用性、稳定性和后续维护。</span></div><div class="principle"><strong>保持长期可用</strong><span>以合规、可靠和持续优化为原则。</span></div></div>
           </div>
-          <figure class="about-media reveal"><img src="assets/images/workstation-development-cutout.png" width="1200" height="850" alt="用于软件开发的笔记本电脑工作台" data-i18n-alt="about.imageAlt"></figure>
+          <figure class="about-media reveal">
+            <canvas id="code-rain" aria-hidden="true"></canvas>
+            <img src="assets/images/workstation-development-cutout.png" width="1200" height="850" alt="用于软件开发的笔记本电脑工作台" data-i18n-alt="about.imageAlt" loading="lazy" decoding="async">
+          </figure>
         </div></div>
       </section>
 
       <section class="contact-band" id="contact" aria-labelledby="contact-title">
-        <div class="contact-inner"><div class="reveal"><h2 id="contact-title" data-i18n="contact.title">从一个明确的问题开始</h2><p data-i18n="contact.description">如果你正在规划软件、人工智能应用或企业信息化项目，欢迎通过企业邮箱与我们联系。</p><div class="button-row"><a class="button" href="mailto:cherishxr97@qiyunzhisuan.cn" data-i18n="contact.action">发送企业邮件</a></div></div><div class="contact-details reveal"><h3 data-i18n="contact.detailsTitle">联系信息</h3><p><strong data-i18n="contact.emailLabel">企业邮箱</strong><br><a href="mailto:cherishxr97@qiyunzhisuan.cn">cherishxr97@qiyunzhisuan.cn</a></p><p><strong data-i18n="contact.addressLabel">注册地址</strong><br><span data-i18n="identity.address">中山市阜沙镇长安街 54 号 2 楼</span></p></div></div>
+        <div class="contact-inner"><div class="reveal"><h2 id="contact-title" data-i18n="contact.title">从一个明确的问题开始</h2><p data-i18n="contact.description">如果你正在规划软件、人工智能应用或企业信息化项目，欢迎通过企业邮箱与我们联系。</p><div class="button-row"><a class="button contact-cta" href="mailto:cherishxr97@qiyunzhisuan.cn" data-i18n="contact.action">发送企业邮件</a></div></div><div class="contact-details glass-card reveal"><h3 data-i18n="contact.detailsTitle">联系信息</h3><p><strong data-i18n="contact.emailLabel">企业邮箱</strong><br><a href="mailto:cherishxr97@qiyunzhisuan.cn">cherishxr97@qiyunzhisuan.cn</a></p><p><strong data-i18n="contact.addressLabel">注册地址</strong><br><span data-i18n="identity.address">中山市阜沙镇长安街 54 号 2 楼</span></p></div></div>
       </section>
 
       <section class="section privacy-section" id="privacy" aria-labelledby="privacy-title">
@@ -112,6 +140,7 @@
     </main>
 
     <footer><div class="footer-inner"><p>© <span data-year>2026</span> <span data-i18n="identity.legalName">中山市启云智算信息技术有限责任公司</span></p><div class="footer-links"><a href="#about" data-i18n="nav.about">关于我们</a><a href="#contact" data-i18n="nav.contact">联系我们</a><a href="#privacy" data-i18n="nav.privacy">隐私政策</a></div></div></footer>
+    <script src="assets/animations.js"></script>
     <script src="assets/site.js" defer></script>
   </body>
 </html>
