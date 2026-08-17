@@ -2,6 +2,49 @@
 
 > 新条目放在最前；只新增，不改写历史结论。
 
+## 2026-08-17 - 注册浏览器标签页 favicon
+
+### 目标
+
+- 让浏览器标签页显示公司 Logo，而不是默认的地球图标。
+
+### 根因或发现
+
+- Logo 只在页面导航正文中引用，`index.html` 的 `<head>` 原来没有 `rel="icon"`；线上域名的 `/favicon.ico` 返回 404。
+
+### 实施结果
+
+- 在 `index.html` 的 `<head>` 增加 PNG favicon 声明，复用 `assets/images/qiyun-logo-concept-a.png`。
+- 现有静态发布流程整体复制 `assets/`，不需要新增发布白名单。
+
+### 文件
+
+- `index.html`
+- `docs/technical/modules/website/README.md`
+- `docs/technical/modules/website/MAINTENANCE_LOG.md`
+- `docs/technical/MAINTENANCE_LOG.md`
+
+### 验证
+
+- 静态检查确认 `<link rel="icon">` 指向存在的 PNG 资源；`git diff --check` 通过。
+- 线上旧版本的 Logo 图片可访问，修改后的线上页面与浏览器缓存需在部署后复核。
+
+### 已验证事实
+
+- Favicon 与页面 Logo 共用同一份本地概念素材；发布流程会携带该资源。
+
+### 未验证边界
+
+- 本次未执行生产部署后的真实浏览器标签页截图复核；浏览器可能缓存旧 favicon。
+
+### 产品行为变化
+
+- 有。支持 favicon 的浏览器在加载页面后会请求并显示公司 Logo。
+
+### 风险与回滚
+
+- 风险较低，主要受浏览器 favicon 缓存和深色标签栏对深色透明图标的对比度影响；回滚时移除新增的 `<link rel="icon">` 即可。
+
 ## 2026-08-17 - 明确语言与地区选择器展示
 
 ### 目标

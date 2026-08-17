@@ -6,6 +6,8 @@
 
 ## Interface
 
+- 标签页图标：`index.html` 的 `<head>` 使用 `assets/images/qiyun-logo-concept-a.png` 作为 PNG favicon；该资源必须随静态部署发布。
+
 - 输入：经公司确认的四种语言公司资料、服务介绍、联系方式、隐私政策、品牌素材和 Meta 验证配置。
 - 输出：可通过 HTTPS 访问的响应式静态公开页面；同一文档提供四种语言的原地切换、公司信息、服务说明、联系方式和隐私政策。GitHub Pages 发布时只打包 `index.html`、`assets/` 与 `robots.txt`。
 - 当前托管：公开仓库 `Lanzxr/qiyunzhisuan-website` 的 `master` 分支通过 GitHub Actions 发布到 `https://lanzxr.github.io/qiyunzhisuan-website/`，Pages 强制使用 HTTPS。
