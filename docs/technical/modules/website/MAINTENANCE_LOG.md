@@ -2,6 +2,50 @@
 
 > 新条目放在最前；只新增，不改写历史结论。
 
+## 2026-08-17 - 放大浏览器标签页 Logo 图标
+
+### 目标
+
+- 让标签页中的 Logo 在浏览器小尺寸图标区域保持清晰可辨。
+
+### 根因或发现
+
+- 原始 `qiyun-logo-concept-a.png` 是 `1024×1024` 画布，但可见图形约为 `760×507`，透明留白被浏览器一并缩放，导致实际 Logo 显得过小。
+
+### 实施结果
+
+- 从原始 Logo 的 alpha 边界裁切并生成 `assets/images/qiyun-favicon.png`，输出为 `64×64` PNG，保留 2px 内边距。
+- `index.html` 改为引用该紧裁切资源，页面导航仍继续使用原始 Logo 文件。
+
+### 文件
+
+- `index.html`
+- `assets/images/qiyun-favicon.png`
+- `docs/technical/modules/website/README.md`
+- `docs/technical/modules/website/MAINTENANCE_LOG.md`
+- `docs/technical/MAINTENANCE_LOG.md`
+
+### 验证
+
+- 确认 favicon 输出尺寸为 `64×64`，可见图形绘制区域为 `60×40`，透明边界保留少量内边距。
+- 确认 `<link rel="icon">` 唯一指向该资源，且现有发布流程会复制 `assets/`；`git diff --check` 通过。
+
+### 已验证事实
+
+- 页面 Logo 原始素材未改写；仅新增裁切后的 favicon 派生资源。
+
+### 未验证边界
+
+- 生产域名需在本次部署后重新截图确认；浏览器可能继续使用旧 favicon 缓存。
+
+### 产品行为变化
+
+- 有。标签页使用更紧凑的 Logo 图形，显示尺寸相较原始整幅 PNG 增大。
+
+### 风险与回滚
+
+- 风险较低；回滚时恢复 `index.html` 对原始 PNG 的引用并删除派生 favicon 文件即可。
+
 ## 2026-08-17 - 注册浏览器标签页 favicon
 
 ### 目标
