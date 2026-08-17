@@ -4,6 +4,7 @@
 
 | 日期 | 模块 | 摘要 | 详细记录 |
 | ---- | ---- | ---- | -------- |
+| 2026-08-17 | `website` | 紧裁切并放大标签页 Logo favicon，保留页面导航使用的原始 Logo 素材 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-17 | `website` | 注册浏览器标签页 favicon，复用本地 Logo 资源并保持现有静态发布白名单 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-17 | `website` | 将语言入口改为明确标注语言与地区的自定义列表框（保留原生后备），并同步四语言文案与移动菜单行为 | [details](./modules/website/MAINTENANCE_LOG.md) |
 | 2026-08-17 | `website` | 移除首屏代码背景的装饰矩形内框，保留无框渐隐与网格 | [details](./modules/website/MAINTENANCE_LOG.md) |
