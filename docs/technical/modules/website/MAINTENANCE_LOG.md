@@ -2,6 +2,68 @@
 
 > 新条目放在最前；只新增，不改写历史结论。
 
+## 2026-08-19 - 增加可直接访问的官网独立内页
+
+### 目标
+
+- 解决平台审核认为网站“除首页外没有二级页面”的问题，让关于我们、服务、联系我们和隐私政策均成为可直接访问的独立 URL。
+
+### 根因或发现
+
+- 线上原导航全部使用 `#about`、`#services` 等首页锚点，公网只提供一个 HTML 页面。
+- 首页已具备经确认的公司登记信息、服务说明、企业邮箱和隐私内容，可以拆分复用，无需新增虚构资料或后端服务。
+
+### 实施结果
+
+- 新增 `about.html`、`services.html`、`contact.html` 和 `privacy.html`，每页有独立 `<title>`、canonical、Open Graph URL、一个 `<h1>`、真实正文和当前页导航状态。
+- 首页导航、首屏 CTA 和页脚链接改为指向独立内页；四种语言仍由 `assets/site.js` 在当前页面原地切换，并为内页补充本地化标题和描述。
+- GitHub Pages 工作流加入五个 HTML 页面与 `sitemap.xml`；`robots.txt` 声明正式域名站点地图；新增内页共享响应式样式。
+
+### 文件
+
+- `index.html`
+- `about.html`
+- `services.html`
+- `contact.html`
+- `privacy.html`
+- `assets/site.js`
+- `assets/site.css`
+- `.github/workflows/deploy-pages.yml`
+- `robots.txt`
+- `sitemap.xml`
+- `README.md`
+- `docs/technical/TECHNICAL_PLAN.md`
+- `docs/technical/MODULE_INDEX.md`
+- `docs/technical/modules/website/README.md`
+- `docs/technical/modules/website/MAINTENANCE_LOG.md`
+- `docs/technical/MAINTENANCE_LOG.md`
+
+### 验证
+
+- `node --check assets/site.js`、`node --check assets/animations.js` 和 `git diff --check` 通过。
+- 静态检查确认五个页面各有一个 `<h1>`、canonical 和可解析的本地资源；页面链接不再使用关于、服务、联系或隐私首页锚点。
+- 本地浏览器在 `1280x720` 和 `390x844` 视口打开五个页面，确认桌面/手机无横向溢出、四个内页正文非空、繁体与英文标题和导航正确；手机菜单可展开，Esc 可关闭并恢复菜单按钮焦点；控制台无 warning 或 error。
+- 视觉检查确认服务内页首屏、当前页导航和移动端布局可读。
+
+### 已验证事实
+
+- `https://qiyunzhisuan.cn/about.html`、`services.html`、`contact.html` 和 `privacy.html` 是发布后应提供的独立页面路径，平台审核可分别打开这些 URL。
+- 静态制品仍只包含公开页面、资源、robots 和站点地图，技术文档、Git 元数据和部署配置不进入公开根目录。
+
+### 未验证边界
+
+- 本次只验证本地静态服务器；尚未将新增页面部署到 GitHub Pages 或其他生产运行面，也未重新执行公网 URL 的 200 状态检查。
+- 支付宝审核结果、企业支付宝产品申请是否匹配和页面公开资料的最终法务确认仍需用户在平台侧完成。
+
+### 产品行为变化
+
+- 有。官网从单一首页扩展为首页加四个可直接访问的独立内页；首页导航、CTA 和页脚不再通过锚点定位内容。
+
+### 风险与回滚
+
+- 发布流程若未同步更新，新增内页可能在公网返回 404；本次已更新 GitHub Pages 白名单，其他生产运行面发布时也必须同步五个 HTML 页面与 `sitemap.xml`。
+- 回滚时移除四个新增 HTML、站点地图及对应白名单和导航改动，即可恢复单页运行面；不涉及数据迁移。
+
 ## 2026-08-17 - 放大浏览器标签页 Logo 图标
 
 ### 目标

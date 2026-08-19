@@ -1,7 +1,7 @@
 # Website 官网模块
 
 > 模块：`website`
-> 最后核对：2026-08-17
+> 最后核对：2026-08-19
 > 详细历史：[MAINTENANCE_LOG.md](./MAINTENANCE_LOG.md)
 
 ## Interface
@@ -9,7 +9,7 @@
 - 标签页图标：`index.html` 的 `<head>` 使用从 `assets/images/qiyun-logo-concept-a.png` 紧裁切生成的 `assets/images/qiyun-favicon.png` 作为 64×64 PNG favicon；两个资源必须随静态部署发布。
 
 - 输入：经公司确认的四种语言公司资料、服务介绍、联系方式、隐私政策、品牌素材和 Meta 验证配置。
-- 输出：可通过 HTTPS 访问的响应式静态公开页面；同一文档提供四种语言的原地切换、公司信息、服务说明、联系方式和隐私政策。GitHub Pages 发布时只打包 `index.html`、`assets/` 与 `robots.txt`。
+- 输出：可通过 HTTPS 访问的响应式静态公开页面；首页及 `about.html`、`services.html`、`contact.html`、`privacy.html` 四个独立内页共同提供公司信息、服务说明、联系方式和隐私政策，每个页面均支持四种语言的原地切换。GitHub Pages 发布时只打包五个 HTML 页面、`assets/`、`robots.txt` 与 `sitemap.xml`。
 - 当前托管：公开仓库 `Lanzxr/qiyunzhisuan-website` 的 `master` 分支通过 GitHub Actions 发布到 `https://lanzxr.github.io/qiyunzhisuan-website/`，Pages 强制使用 HTTPS。
 - 副作用：发布后内容可被搜索引擎和 Meta/Facebook 爬虫读取；首版不写入用户数据。
 - 失败边界：缺少域名/HTTPS、验证配置或已确认的公司资料时，不得宣称网站验证或公司真实性验收完成。
@@ -17,7 +17,7 @@
 ## 核心不变量
 
 1. 页面展示的公司法定名称必须统一为“中山市启云智算信息技术有限责任公司”，不得在不同语言或页面出现冲突称呼。
-2. 四种语言版本必须通过同一套页面结构和本地文案字典提供，切换不得导航到独立页面，不能出现某种语言缺失核心公司信息或地区措辞不当。
+2. 四种语言版本必须通过同一套页面结构和本地文案字典提供；语言切换在当前独立页面原地完成，不因切换语言而改变页面路由，不能出现某种语言缺失核心公司信息或地区措辞不当。
 3. Meta 验证入口必须保持可配置、可追踪，不能把真实 token 写入维护文档或公开日志；未获得 token 时保留占位值并明确不代表验证完成。
 4. 隐私政策、联系方式和服务说明属于公开内容，发布前必须由公司确认。
 5. 首版只提供静态展示，不引入动态数据加载、后台或用户提交数据存储。
@@ -35,21 +35,22 @@
 17. 联系区邮件 CTA 必须继续指向已确认的企业 `mailto` 地址；桌面端与正文左边界对齐，窄屏使用可用宽度，悬停、按下和键盘焦点反馈清晰且不依赖持续脉冲动画。
 18. 联系信息卡片使用近黑色实体面板承载白色文字，邮箱使用白色强调；卡片需与白色联系区形成可辨识层级，并在窄屏保持完整可读。
 19. 页面视觉系统采用近白背景、1px 中性分隔线、黑色主 CTA 和单一蓝色文字品牌点缀；导航高度约 64px，卡片仅在真实信息分组需要时使用，装饰动效保持克制并提供 reduced-motion 降级。
+20. 首页导航和 CTA 必须链接到可直接访问的独立内页 `about.html`、`services.html`、`contact.html` 和 `privacy.html`；内页必须有独立标题、主标题和真实正文，不能以首页锚点、空白页或跳转页代替。
 
 ## 文件所有权
 
 | 区域 | 首读文件或符号 |
 | ---- | -------------- |
-| 页面入口 | `index.html` |
+| 页面入口 | `index.html`, `about.html`, `services.html`, `contact.html`, `privacy.html` |
 | 页面与语言内容 | `assets/site.js` 中的 `localeContent` 与 `applyLocale` |
-| 静态资源与验证文件 | `assets/images`, HTML `<head>`、网站根目录验证文件 |
+| 静态资源与验证文件 | `assets/images`, HTML `<head>`、`robots.txt`、`sitemap.xml` |
 | 样式与响应式布局 | `assets/site.css` |
 | GitHub Pages 发布制品 | `.github/workflows/deploy-pages.yml` 的 `_site` 白名单打包步骤 |
 
 ## 聚焦验证
 
 ```text
-当前采用无构建步骤的静态 HTML/CSS/JS。聚焦验证包括：四种语言原地切换、查询参数状态、HTML/CSS 相对资源路径检查、Pages `_site` 白名单检查、移动/桌面响应式检查、HTTPS 公网访问检查，以及 Meta 提供的实际域名验证检查。
+当前采用无构建步骤的静态 HTML/CSS/JS。聚焦验证包括：五个页面的直接访问与真实正文、每页唯一主标题和 canonical、四种语言原地切换、查询参数状态、HTML/CSS 相对资源路径检查、Pages `_site` 白名单检查、移动/桌面响应式检查、HTTPS 公网访问检查，以及平台提供的实际域名验证检查。
 ```
 
 ## 邻接模块

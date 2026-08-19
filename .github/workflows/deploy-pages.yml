@@ -26,7 +26,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p _site
-          cp index.html robots.txt _site/
+          cp index.html about.html services.html contact.html privacy.html robots.txt sitemap.xml _site/
           cp -R assets _site/assets
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3

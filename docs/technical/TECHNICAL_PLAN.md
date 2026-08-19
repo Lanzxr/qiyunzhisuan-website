@@ -1,19 +1,19 @@
 # 中山市启云智算信息技术有限责任公司官网 全局技术规划
 
 > 范围：只记录跨模块 seam 和共享约束
-> 最后核对：2026-08-15
+> 最后核对：2026-08-19
 
 ## 运行面
 
-- 开发：本地静态预览或项目选定的前端开发服务器；具体命令待实现阶段根据最终工具链确认。
-- 发布：GitHub Pages Actions 在 CI 中建立 `_site`，只上传 `index.html`、`assets/` 和 `robots.txt`；公开 HTTPS 站点必须能被 Meta/Facebook 爬虫从公网访问。
+- 开发：无构建步骤的静态 HTML/CSS/JavaScript，可用本地静态文件服务器预览。
+- 发布：GitHub Pages Actions 在 CI 中建立 `_site`，只上传 `index.html`、`about.html`、`services.html`、`contact.html`、`privacy.html`、`assets/`、`robots.txt` 和 `sitemap.xml`；公开 HTTPS 站点必须能被平台审核人员及爬虫从公网访问。
 - 外部服务：Meta Business/域名验证，仅用于所有权验证；不在首版接入登录、广告或 Graph API。
-- 当前没有 mock、后端或数据库运行面；项目为空仓库，需在实现阶段确认部署平台。
+- 当前没有 mock、后端或数据库运行面；正式域名已写入 canonical、Open Graph 和站点地图，但本次未验证公网部署结果。
 
 ## 全局架构 seam
 
 ```text
-website 静态 HTML + 本地语言字典 -> 当前文档内容切换 -> HTTPS 托管 -> Meta 域名验证爬虫
+website 多页面静态 HTML + 本地语言字典 -> 当前页面内容切换 -> 白名单静态制品 -> HTTPS 托管 -> 平台审核与公开访问
 ```
 
 ## 模块关系
@@ -33,6 +33,6 @@ website 静态 HTML + 本地语言字典 -> 当前文档内容切换 -> HTTPS �
 - Meta 验证通过不等于 Facebook 对公司真实性作出保证；两者必须分别验收。
 - 发布失败可回滚到上一版静态构建；验证 token、HTTPS、公开公司信息和语言切换必须分别检查。
 - 任何未提供的注册信息、域名或部署凭据都保持未验证，不以占位值宣称验收通过。
-- 尚未注册域名时，不设置 `CNAME`、canonical、`og:url` 或绝对 `og:image`；取得实际公开域名后统一配置并以公网访问验证。
+- canonical、`og:url`、绝对 `og:image` 和 `sitemap.xml` 必须使用同一正式域名；配置后仍需以公网访问验证，不能仅凭本地静态检查宣称部署完成。
 
 模块内部文件和实现不要复制到本文件。
