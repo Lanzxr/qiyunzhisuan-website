@@ -76,6 +76,41 @@ hk.about = { ...hk.about, title: "針對實際業務，交付實用系統", para
 hk.contact = { ...hk.contact, title: "從一個清晰的業務問題開始", description: "如你正計劃開發軟件、人工智能應用或企業數碼化項目，歡迎透過企業電郵聯絡我們。", action: "發送電郵" };
 hk.privacy = { ...hk.privacy, description: "本政策說明中山市启云智算信息技术有限责任公司營運本網站時如何處理相關個人資料。", scope: { ...hk.privacy.scope, items: ["本政策適用於中山市启云智算信息技术有限责任公司營運的本網站。", "本網站不提供帳戶登記、網上表格、網上交易或登入功能。"] }, information: { ...hk.privacy.information, items: ["網站託管、網絡服務或瀏覽器可能按其規則處理存取所需的技術資料。", "當閣下主動發送企業電郵時，電郵地址、寄件人姓名、電郵內容及附件可能用於處理該次聯絡。"] }, rights: { ...hk.privacy.rights, title: "六、閣下的權利及政策更新" } };
 
+const pageContent = {
+  "zh-CN": { about: { overviewTitle: "关于启云智算", principlesTitle: "服务原则" }, services: { scopeTitle: "服务范围", contactTitle: "从需求沟通开始" }, contact: { channelTitle: "企业联系渠道", infoTitle: "企业主体信息", noteTitle: "联系时可说明", note: "为了更快理解需求，可以在邮件中说明业务场景、当前流程、已有系统和希望解决的问题。" }, privacy: { contentTitle: "政策内容" } },
+  "zh-TW": { about: { overviewTitle: "關於啟雲智算", principlesTitle: "服務原則" }, services: { scopeTitle: "服務範圍", contactTitle: "從需求溝通開始" }, contact: { channelTitle: "企業聯絡渠道", infoTitle: "企業主體資訊", noteTitle: "聯絡時可說明", note: "為了更快了解需求，你可以在電子郵件中說明業務情境、目前流程、既有系統及希望解決的問題。" }, privacy: { contentTitle: "政策內容" } },
+  "zh-HK": { about: { overviewTitle: "關於啟雲智算", principlesTitle: "服務原則" }, services: { scopeTitle: "服務範圍", contactTitle: "由需求溝通開始" }, contact: { channelTitle: "企業聯絡渠道", infoTitle: "企業主體資料", noteTitle: "聯絡時可說明", note: "為了更快了解需要，你可以在電郵中說明業務情境、目前流程、現有系統及希望解決的問題。" }, privacy: { contentTitle: "政策內容" } },
+  en: { about: { overviewTitle: "About Qiyun Zhisuang", principlesTitle: "Service principles" }, services: { scopeTitle: "Service scope", contactTitle: "Start with the requirements" }, contact: { channelTitle: "Business contact channel", infoTitle: "Company identity", noteTitle: "What to include", note: "To help us understand your request, include the business context, current process, existing systems, and the problem you want to solve." }, privacy: { contentTitle: "Policy content" } }
+};
+Object.entries(pageContent).forEach(([locale, pages]) => { localeContent[locale].pages = pages; });
+
+const pageMetadata = {
+  "zh-CN": {
+    about: { title: "关于我们｜中山市启云智算信息技术有限责任公司", description: "了解中山市启云智算信息技术有限责任公司的企业登记信息、技术服务方向与交付原则。" },
+    services: { title: "服务项目｜中山市启云智算信息技术有限责任公司", description: "启云智算提供软件开发、人工智能应用、系统集成、数据处理、企业信息化与跨境业务自动化服务。" },
+    contact: { title: "联系我们｜中山市启云智算信息技术有限责任公司", description: "查看中山市启云智算信息技术有限责任公司的企业邮箱、注册地址与公开登记信息。" },
+    privacy: { title: "隐私政策｜中山市启云智算信息技术有限责任公司", description: "了解启云智算官网处理访问技术信息、企业邮件、语言偏好与个人信息请求的规则。" }
+  },
+  "zh-TW": {
+    about: { title: "關於我們｜啟雲智算", description: "瞭解啟雲智算的企業登記資訊、技術服務方向與交付原則。" },
+    services: { title: "服務項目｜啟雲智算", description: "啟雲智算提供軟體開發、人工智慧應用、系統整合、資料處理、企業數位化及跨境業務自動化服務。" },
+    contact: { title: "聯絡我們｜啟雲智算", description: "查看啟雲智算的企業電子郵件、註冊地址與公開登記資訊。" },
+    privacy: { title: "隱私權政策｜啟雲智算", description: "瞭解啟雲智算官網處理存取技術資料、企業郵件、語言偏好與個人資料請求的方式。" }
+  },
+  "zh-HK": {
+    about: { title: "關於我們｜啟雲智算", description: "了解啟雲智算的公司登記資料、技術服務方向及交付原則。" },
+    services: { title: "服務項目｜啟雲智算", description: "啟雲智算提供軟件開發、人工智能應用、系統整合、資料處理、企業數碼化及跨境業務自動化服務。" },
+    contact: { title: "聯絡我們｜啟雲智算", description: "查看啟雲智算的企業電郵、註冊地址及公開登記資料。" },
+    privacy: { title: "私隱政策｜啟雲智算", description: "了解啟雲智算網站處理存取技術資料、企業電郵、語言偏好及個人資料要求的方式。" }
+  },
+  en: {
+    about: { title: "About | Qiyun Zhisuang", description: "Learn about Qiyun Zhisuang's public registration details, technology services, and delivery principles." },
+    services: { title: "Services | Qiyun Zhisuang", description: "Qiyun Zhisuang provides software development, AI applications, systems integration, data processing, enterprise digitalization, and cross-border operations automation." },
+    contact: { title: "Contact | Qiyun Zhisuang", description: "Find Qiyun Zhisuang's business email, registered address, and public company details." },
+    privacy: { title: "Privacy Policy | Qiyun Zhisuang", description: "Learn how the Qiyun Zhisuang website handles access data, business email, language preferences, and personal-information requests." }
+  }
+};
+
 // Initialize after animations load
 document.documentElement.classList.add("js");
 
@@ -127,11 +162,13 @@ function populatePrinciples(content) {
 function applyLocale(locale, updateUrl) {
   const resolvedLocale = localeContent[locale] ? locale : "zh-CN";
   const content = localeContent[resolvedLocale];
+  const pageId = document.body.dataset.page || "home";
+  const metadata = pageMetadata[resolvedLocale]?.[pageId];
   document.documentElement.lang = resolvedLocale;
-  document.title = content.documentTitle;
-  document.querySelector('meta[name="description"]').setAttribute("content", content.description);
-  document.querySelector('meta[property="og:title"]').setAttribute("content", content.ogTitle);
-  document.querySelector('meta[property="og:description"]').setAttribute("content", content.ogDescription);
+  document.title = metadata?.title || content.documentTitle;
+  document.querySelector('meta[name="description"]')?.setAttribute("content", metadata?.description || content.description);
+  document.querySelector('meta[property="og:title"]')?.setAttribute("content", metadata?.title || content.ogTitle);
+  document.querySelector('meta[property="og:description"]')?.setAttribute("content", metadata?.description || content.ogDescription);
   document.querySelectorAll("[data-i18n]").forEach((element) => { const value = getValue(content, element.dataset.i18n); if (value) element.textContent = value; });
   document.querySelectorAll("[data-i18n-alt]").forEach((element) => { const value = getValue(content, element.dataset.i18nAlt); if (value) element.alt = value; });
   document.querySelectorAll("[data-i18n-aria]").forEach((element) => { const value = getValue(content, element.dataset.i18nAria); if (value) element.setAttribute("aria-label", value); });

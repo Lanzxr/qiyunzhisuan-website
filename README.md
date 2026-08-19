@@ -7,7 +7,13 @@
 
 ## 页面与语言
 
-网站只有一个入口：`index.html`。
+网站包含首页和四个可直接访问的独立内页：
+
+- `index.html`：首页与企业主体信息概览
+- `about.html`：关于我们与企业登记信息
+- `services.html`：服务项目
+- `contact.html`：企业联系渠道
+- `privacy.html`：隐私政策
 
 页面内置简体中文、繁体中文（台湾措辞）、繁体中文（香港措辞）和英语文案。语言按钮在当前页面切换内容，不加载另一个页面，也不需要四次部署。切换后地址会更新为 `?lang=zh-TW`、`?lang=zh-HK` 或 `?lang=en`，便于分享同一种语言状态。
 
@@ -22,16 +28,16 @@
 1. 将本目录推送至 GitHub 仓库。
 2. 打开仓库的 `Settings`，进入 `Pages`。
 3. 在 `Build and deployment` 中选择 `GitHub Actions`。
-4. 推送到 `main` 或 `master` 分支后，`.github/workflows/deploy-pages.yml` 会自动发布网站。工作流只会将 `index.html`、`assets/` 和 `robots.txt` 打包为 Pages 制品；技术维护文档和临时图片不会进入公开网站。
+4. 推送到 `main` 或 `master` 分支后，`.github/workflows/deploy-pages.yml` 会自动发布网站。工作流只会将五个公开 HTML 页面、`assets/`、`robots.txt` 和 `sitemap.xml` 打包为 Pages 制品；技术维护文档和临时图片不会进入公开网站。
 5. GitHub Actions 完成后，在仓库 `Settings > Pages` 查看公开网址。
 
-自定义域名尚未确定。确认域名后，在 GitHub Pages 设置中绑定域名并完成 DNS 配置。HTTPS 由 GitHub Pages 提供，但必须等待域名验证和证书签发完成。
+正式网站通过 `https://qiyunzhisuan.cn/` 和 `https://www.qiyunzhisuan.cn/` 提供 HTTPS 访问。GitHub Pages 继续作为同一静态内容的公开副本。
 
 GitHub Pages 的公开内容与 GitHub 仓库源码的可见性是两回事：本工作流已经阻止非网站文件出现在 Pages 域名下；仓库内文件是否可被浏览，仍取决于仓库设置为公开或私有。`tmp/` 已由 `.gitignore` 排除，避免把首图候选文件提交到仓库。
 
 ## Meta/Facebook 域名验证
 
-在根目录 `index.html` 的 `<head>` 内有以下占位标签：
+每个公开 HTML 页面 `<head>` 内都有以下占位标签：
 
 ```html
 <meta name="facebook-domain-verification" content="REPLACE_WITH_META_TOKEN">

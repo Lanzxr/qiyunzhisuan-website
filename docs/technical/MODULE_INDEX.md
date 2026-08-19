@@ -5,7 +5,7 @@
 
 | 任务信号 | 模块 | 必读说明 | 详细日志 | 主要文件前缀 |
 | -------- | ---- | -------- | -------- | ------------ |
-| 官网页面、四种语言内容、语言切换、Meta 验证、响应式布局、公开联系信息 | `website` | [README](./modules/website/README.md) | [log](./modules/website/MAINTENANCE_LOG.md) | `index.html`, `assets/site.css`, `assets/site.js`, `assets/images` |
+| 官网页面、独立内页、四种语言内容、语言切换、Meta 验证、响应式布局、公开联系信息 | `website` | [README](./modules/website/README.md) | [log](./modules/website/MAINTENANCE_LOG.md) | `*.html`, `assets/site.css`, `assets/site.js`, `assets/images` |
 
 ## 组合读取规则
 
